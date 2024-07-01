@@ -1,4 +1,4 @@
-import { children, createContext,useState ,useContext } from "react";
+import {createContext,useState ,useContext, useEffect } from "react";
 import axios from "axios";
 
 
@@ -7,30 +7,32 @@ const FunctionContext = createContext(null);
 let URL = "https://swapi.dev/api/people/?page=1";
 
 
-export const FunctionProvider = ({children}) => {
+const FunctionProvider = ({children}) => {
     //states
     const [data, setData] = useState([]);
 
- /*    useEffect(()=>{
-       
-    },[])
- */
-    //All Fuctions
     const fetchData =  async () =>  {
         try{
             let response = await axios.get(URL);
-
+            response= response.data;
+            console.log(response);
+            setData(response);
         }catch(err){
             console.error(err);
         }
-    console.log(response);
-    setData(response);
-    }
+    
+    
+}
+
+    //All Fuctions
+    
 
 
 return (
-    <FunctionContext.Provider value={{fetchData}}>
+    <FunctionContext.Provider value={{data,setData,fetchData}}>
         {children}
     </FunctionContext.Provider>
 )
 };
+
+export {FunctionContext,FunctionProvider};
