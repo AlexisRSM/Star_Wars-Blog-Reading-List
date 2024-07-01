@@ -4,11 +4,14 @@ import App from './App.jsx'
 import './index.css'
 
 import {BrowserRouter as Router, RouterProvider} from "react-router-dom";
+import { FunctionProvider } from './Context/Context.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <FunctionProvider>
+      {/* <Router> */}
+        <App />
+     {/*  </Router> */}
+    </FunctionProvider>
   </React.StrictMode>,
 )

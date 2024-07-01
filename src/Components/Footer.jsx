@@ -3,8 +3,8 @@ function Footer() {
     <>
       <footer className="footer bg-dark text-white text-center p-4">
         <div className="container">
-          <p>&copy; 2024 Star Wars Fan Site. All rights reserved.</p>
-          <p>Designed by Your Name</p>
+          <p> Star Wars Fan Site. All rights reserved.</p>
+          <p>Designed by Ralfe Mendes &copy; 2024</p>
         </div>
       </footer>
     </>

@@ -1,30 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
 import {Routes,Route} from "react-router-dom";
-//Context?
-
+//Context needed ()using function?
+import {FunctionContext, FunctionProvider} from "./Context/Context"
+import Home from './Components/Home';
+//move to home?
 import Navbar from './Components/Navbar'
-import Footer from './Components/Footer'
 import Cards from './Components/Cards';
+import Footer from './Components/Footer'
+/* import Cards from './Components/Cards'; */
+
 import "./style/styles.css"
 
 function App() {
-  
+  const {fetchData}=UseContext(FunctionProvider);
+
+  useEffect(()=>{
+    fetchData();
+  },[])
+
   return (
     <>
       <Navbar/>
-        <Routes>
-          <Route 
-            path="/" element = {
-              <Cards>
+      <Cards/>
+      {/* {<Route>
 
-              </Cards>
-            }
-          />
-        </Routes>
+      </Route>} */}
       <Footer/>
+        
     </>
   )
 }
