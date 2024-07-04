@@ -4,7 +4,7 @@ function Cards({actor}) {
             <div className="col-md-4 col-sm-6">
                 <div className="card my-2">
                     <img
-                        src={dog.img} className="card-img-top img-fluid" alt={dog.name + dog.description}
+                        src={actor.img} className="card-img-top img-fluid" alt={actor.name}
                         style={{ objectFit: 'cover',height:"400px" }}
                     />
                     <div className="card-body">
