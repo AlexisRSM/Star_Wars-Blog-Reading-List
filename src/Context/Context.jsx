@@ -16,7 +16,7 @@ const FunctionProvider = ({children}) => {
             let response = await axios.get(URL);
             response= response.data;
             console.log(response);
-            setData(response);
+            setData(response.results); /* .results or normal */
         }catch(err){
             console.error(err);
         }

@@ -11,19 +11,27 @@ import Footer from './Components/Footer'
 /* import Cards from './Components/Cards'; */
 
 import "./style/styles.css"
+import Cards from './Components/Cards';
 
 function App() {
   const {fetchData,data,setData}=useContext(FunctionContext);
-console.log(fetchData)
-  /* useEffect(()=>{
+  useEffect(()=>{
     fetchData();
-  },[]) */
+  },[])
+
+  console.log(data)
+
 
   return (
     <>
       <Navbar/>
 
       {/* <Cards/> */}
+      {data.map((el) =>{
+        <div className="row">
+          <Cards actor={el} />
+        </div>
+      })}
       
       <Footer/>
         
