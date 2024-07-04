@@ -1,10 +1,13 @@
 import {createContext,useState ,useContext, useEffect } from "react";
 import axios from "axios";
+import{v4 as uuid} from 'uuid'
 
 
 const FunctionContext = createContext(null);
 
 let URL = "https://swapi.dev/api/people/?page=1";
+
+let imgBase = "https://starwars-visualguide.com/assets/img/characters";
 
 
 const FunctionProvider = ({children}) => {
@@ -15,8 +18,13 @@ const FunctionProvider = ({children}) => {
         try{
             let response = await axios.get(URL);
             response= response.data;
-            console.log(response);
-            setData(response.results); /* .results or normal */
+            response = response.results.map((el, i)=>{
+                let img = `${imgBase}/${i+1}.jpg`
+                let id = uuid()
+                return {...el,img, id}
+            })
+            /* console.log(response); */
+            setData(response); /* .results or normal */
         }catch(err){
             console.error(err);
         }

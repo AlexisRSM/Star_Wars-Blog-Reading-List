@@ -1,6 +1,19 @@
 import Footer from "./Footer";
+import { useContext } from "react";
+import { FunctionContext } from "../Context/Context";
 
-function Details({actor}) {
+import { useParams } from "react-router-dom";
+
+
+
+function Details() {
+
+    const {data} =useContext(FunctionContext)
+    const {id} =useParams()
+
+    let actor = data.filter(el=>{
+        return el.id === id
+    })[0]
     return ( 
         <>
             <div className="row">
@@ -14,7 +27,7 @@ function Details({actor}) {
             
             <Footer/> {/* //Maybe different footer like in the app  */}
         </>
-     );
+    );
 }
 
 export default Details;

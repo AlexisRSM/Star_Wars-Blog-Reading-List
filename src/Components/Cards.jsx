@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
 function Cards({actor}) {
     return ( 
         <>
             <div className="col-md-4 col-sm-6">
                 <div className="card my-2">
                     <img
-                        src={actor.img} className="card-img-top img-fluid" alt={actor.name}
+                        src={actor.img} 
+                        className="card-img-top img-fluid" alt={actor.name}
                         style={{ objectFit: 'cover',height:"400px" }}
                     />
                     <div className="card-body">
@@ -18,11 +20,14 @@ function Cards({actor}) {
                             Hair Color: {actor.hair}<br/>
                         </p>
                     <div className="buttons">
-                        <button>
+<Link to={`/details/${actor.id}`}>
+                        <button >
+                            profile
 
                         </button>
+                        </Link>
                         <button>
-                            <i class="bi bi-star"></i>
+                            <i className="bi bi-star"></i>
                         </button>
                     </div>
 
