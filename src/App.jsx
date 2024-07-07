@@ -59,7 +59,7 @@ function App() {
         } />
 
         <Route path="/details/:id" element={<Details />} />
-        <Route path="/details_planets/:id" element={<DetailsPlanets />} /> {/* Should I add like this */}
+        <Route path="/details_planets/:uid" element={<DetailsPlanets />} /> {/* Should I add like this */}
 
       </Routes>
 

@@ -6,9 +6,9 @@ import { useParams } from "react-router-dom";
 
 function DetailsPlanets() {
     const { planets } = useContext(FunctionContext);
-    const { id } = useParams();
+    const { uid } = useParams();
     let planet = planet.filter((el) => {
-        return el.id === id;
+        return el.uid === uid;
     })[0];
     return (
         <>
