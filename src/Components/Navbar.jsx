@@ -10,7 +10,7 @@ function Navbar() {
               className="img-fluid" 
               src='src/img/chewbacca-nav-bar-icon.png' 
               alt="Chewbacca Logo" 
-              style={{ width: '100px', height: '75px' }}
+              style={{ width: '100px', height: '75px'}}
             />
           </div>
           <div className="col text-center">

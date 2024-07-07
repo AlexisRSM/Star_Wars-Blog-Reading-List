@@ -1,26 +1,27 @@
 import { Link } from "react-router-dom";
-function Cards({actor}) {
+function CardsPlanets({planet}) {
     return ( 
         <>
             <div className="col-md-4 col-sm-6">
                 <div className="card my-2">
                     <img
-                        src={actor.img} 
-                        className="card-img-top img-fluid" alt={actor.name}
+                        src={planet.img} 
+                        className="card-img-top img-fluid" alt={planet.name}
                         style={{ objectFit: 'contain',height:"400px" }}
                     />
                     <div className="card-body">
-                        <h5 className="card-title">{actor.name} </h5>
+                        <h5 className="card-title">{planet.name} </h5>
                         
-                        <p className="card-text">
-                            Gender: {actor.gender}<br/>
-                            Height: {actor.height}<br/>
-                            Mass: {actor.mass}<br/>
-                            Eye Color: {actor.eye_color}<br/>
-                            Hair Color: {actor.hair_color}<br/>
+                        <p className="card-text fs-5" style={{fontFamily:"Times"}}>
+                            Climate: {planet.detailedInfo.climate}<br/>
+                            
+                            Diameter: {planet.detailedInfo.diameter}<br/>
+                            Population: {planet.detailedInfo.population}<br/>
+                            Surface Water: {planet.detailedInfo.surface_water}%<br/>
+                            Criation: {planet.detailedInfo.created}<br/>
                         </p>
                     <div className="buttons">
-<Link to={`/details/${actor.id}`}>
+<Link to={`/details/${planet.id}`}>
                         <button >
                             profile
 
@@ -39,7 +40,7 @@ function Cards({actor}) {
                 </div>
             </div>
         </>
-    );
+     );
 }
 
-export default Cards;
+export default CardsPlanets;

@@ -4,30 +4,68 @@ import { FunctionContext } from "../Context/Context";
 
 import { useParams } from "react-router-dom";
 
-
-
 function Details() {
+  const { data } = useContext(FunctionContext);
+  const { id } = useParams();
 
-    const {data} =useContext(FunctionContext)
-    const {id} =useParams()
-
-    let actor = data.filter(el=>{
-        return el.id === id
-    })[0]
-    return ( 
-        <>
-            <div className="row">
-                <div className="col-6"><img src={actor.img}/></div>
-                <div className="col-6">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur et, numquam sunt similique vitae, sapiente veniam dolore doloribus atque aliquid qui, vel ullam repudiandae dicta nemo sequi in asperiores minus.
-                    </p>
-                </div>
-            </div>
-            
-            <Footer/> {/* //Maybe different footer like in the app  */}
-        </>
-    );
+  let actor = data.filter((el) => {
+    return el.id === id;
+  })[0];
+  return (
+    <>
+      <div className="row d-flex align-items-center">
+        <div className="col-4">
+            <img src={actor.img} />
+        </div>
+        <div className="col-8 align-self-center">
+            <h2>{actor.name}</h2>
+            <p>
+            Born: {actor.birth_year}
+            <br />
+            Gender: {actor.gender}
+            <br />
+            Height: {actor.height} cm
+            <br />
+            Mass: {actor.mass} kg
+            <br />
+            Hair Color: {actor.hair_color}
+            <br />
+            Skin Color: {actor.skin_color}
+            <br />
+            Eye Color: {actor.eye_color}
+            <br />
+            Homeworld:{" "}
+            <a href={actor.homeworld}           target="_blank" rel="noopener noreferrer">
+                {actor.homeworld}
+            </a>
+          </p>
+          <p>
+            {actor.name} is known for {actor.films.length} films:
+            <ul>
+                {actor.films.map((film, index) => (
+                    <li key={index}>
+                        <a href={film} target="_blank" rel="noopener noreferrer">
+                        {film}
+                        </a>
+                    </li>
+            ))}
+            </ul>
+            </p>
+            <p>
+                {actor.name} has {actor.vehicles.length} vehicles and{" "}
+                {actor.starships.length} starships.
+            </p>
+            <p>
+                More about {actor.name}:{" "}
+                <a href={actor.url} target="_blank" rel="noopener noreferrer">
+                {actor.url}
+            </a>
+            </p>
+        </div>
+        </div>
+      <Footer /> {/* //Maybe different footer like in the app  */}
+    </>
+);
 }
 
 export default Details;
