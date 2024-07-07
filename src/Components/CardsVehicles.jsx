@@ -4,17 +4,17 @@ function CardsVehicles(vehicle) {
     return ( 
         <>
             <div className="col-md-4 col-sm-6">
-                <div className="card my-2">
+                <div className="card my-2" >
                     <img
-                        src={vehicle.img} 
-                        className="card-img-top img-fluid" alt={vehicle.name}
+                        src={vehicle.vehicle.img} 
+                        className="card-img-top img-fluid" alt={vehicle.vehicle.name}
                         style={{ objectFit: 'contain',height:"400px" }}
                     />
-                    <div className="card-body">
-                        <h5 className="card-title">{vehicle.name} </h5>
+                    <div className="card-body" >
+                        <h5 className="card-title">{vehicle.vehicle.name} </h5>
                         
-                        <p className="card-text">
-                            UID: {vehicle.uid}<br/>
+                        <p className="card-text" style={{fontFamily:"Times"}}>
+                            UID: {vehicle.vehicle.uid}<br/>
                             
                         </p>
                     <div className="buttons">
