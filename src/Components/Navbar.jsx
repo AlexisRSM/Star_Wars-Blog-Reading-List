@@ -43,7 +43,7 @@ function Navbar() {
                   <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="favoritesDropdown">
                     {favorites.map((item, index) => (
                       <li key={index}>
-                        {item.name}
+                        {item.name} <i class="bi bi-bookmark-heart fs-3 d-inline-flex /* justify-content-end */"></i>
                         <span className='float-end'>
                         </span>
 

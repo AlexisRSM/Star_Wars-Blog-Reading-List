@@ -139,7 +139,7 @@ const FunctionProvider = ({ children }) => {
 
 
     return (
-        <FunctionContext.Provider value={{ data, setData, fetchData, planets, setPlanets, fetchDataPlanets, vehicles, setVehicles, fetchDataVehicles, favorites, favoritesReducer, handleAdd, handleDelete }}>
+        <FunctionContext.Provider value={{ data, setData, fetchData, planets, setPlanets, fetchDataPlanets, vehicles, setVehicles, fetchDataVehicles, favorites, favoritesReducer, dispatch, handleAdd, handleDelete }}>
             {children}
         </FunctionContext.Provider>
     )

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FunctionContext } from "../Context/Context";
-import { useContext } from "react";
+import { useContext, useReducer } from "react";
 function Cards({ actor }) {
 
     const { handleAdd, handleDelete } = useContext(FunctionContext);
@@ -33,8 +33,8 @@ function Cards({ actor }) {
                                 </button>
                             </Link>
                             <button
-                                onAdd={() => handleAdd(actor)}   //likethis ? do i need to import reducer?
-                                onDelete={() => handleDelete(actor)}
+                                onClick={() => handleAdd(actor)}   //likethis ? do i need to import reducer?
+                                onClick2={() => handleDelete(actor)} //Multiple caracters
                             >
                                 <i className="bi bi-star"></i>
                             </button>
