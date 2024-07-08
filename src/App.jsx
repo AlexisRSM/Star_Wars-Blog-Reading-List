@@ -4,12 +4,12 @@ import { Routes, Route } from "react-router-dom";
 import { FunctionContext } from "./Context/Context"
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
-import Details from './Components/Details';
 import "./style/styles.css"
+import Details from './Components/Details';
 import Cards from './Components/Cards';
 import CardsPlanets from './Components/CardsPlanets';
-import CardsVehicles from './Components/CardsVehicles';
 import DetailsPlanets from './Components/DetailsPlanets';
+import CardsVehicles from './Components/CardsVehicles';
 import DetailsVehicles from './Components/DetailsVehicles';
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
   /* console.log(planets); */
   /* console.log(vehicles); */
   //make favorites array later,maybe favorites,setFavorite and method to check if someone is already inFavorites? compare names?
+
 
 
   return (

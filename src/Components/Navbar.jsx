@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { FunctionContext } from "../Context/Context"
 
 function Navbar() {
+  const { favorites } = useContext(FunctionContext)
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div className="container-fluid">
@@ -35,11 +39,24 @@ function Navbar() {
                   aria-expanded="false">
                   <i className="bi bi-bookmark-heart fs-3"></i>
                 </button>
-                <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="favoritesDropdown">
+                {favorites.length >= 1 && (
+                  <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="favoritesDropdown">
+                    {favorites.map((item, index) => (
+                      <li key={index}>
+                        {item.name}
+                        <span className='float-end'>
+                        </span>
+
+                      </li>
+                    ))
+                    }
+                  </ul>
+                )}
+                {/* <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="favoritesDropdown">
                   <li><a className="dropdown-item" href="#">Favorite 1</a></li>
                   <li><a className="dropdown-item" href="#">Favorite 2</a></li>
-                  <li><a className="dropdown-item" href="#">Favorite 3</a></li> {/* Put a map here */}
-                </ul>
+                  <li><a className="dropdown-item" href="#">Favorite 3</a></li> Put a map here
+                </ul> */}
               </li>
             </ul>
           </div>
