@@ -4,7 +4,7 @@ import { useContext, useReducer } from "react";
 function Cards({ actor }) {
 
     const { handleAdd, handleDelete } = useContext(FunctionContext);
-    console.log(handleAdd);
+    // console.log(handleAdd);
 
     return (
         <>
@@ -34,7 +34,7 @@ function Cards({ actor }) {
                             </Link>
                             <button
                                 onClick={() => handleAdd(actor)}   //likethis ? do i need to import reducer?
-                                onClick2={() => handleDelete(actor)} //Multiple caracters
+                                // onClick2={() => handleDelete(actor)} //Multiple caracters
                             >
                                 <i className="bi bi-star"></i>
                             </button>

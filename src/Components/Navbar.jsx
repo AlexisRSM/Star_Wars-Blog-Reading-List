@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { FunctionContext } from "../Context/Context"
 
 function Navbar() {
-  const { favorites } = useContext(FunctionContext)
+  const { favorites, handleDelete } = useContext(FunctionContext)
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
@@ -46,6 +46,9 @@ function Navbar() {
                         {item.name} <i class="bi bi-bookmark-heart fs-3 d-inline-flex /* justify-content-end */"></i>
                         <span className='float-end'>
                         </span>
+                        <span onClick={()=>{
+                          handleDelete(item)
+                        }}>delete</span>
 
                       </li>
                     ))

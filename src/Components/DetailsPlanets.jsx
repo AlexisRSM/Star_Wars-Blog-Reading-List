@@ -10,6 +10,8 @@ function DetailsPlanets() {
     let planet = planets.filter((el) => {
         return el.uid === uid;
     })[0];
+
+    console.log(planet)
     return (
         <>
             <div className="row d-flex align-items-center">

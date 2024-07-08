@@ -34,14 +34,14 @@ function DetailsVehicles() {
     console.log(details);
     return (
         <>
-            <div className="row d-flex align-items-center">
+           {details ? (<div className="row d-flex align-items-center">
                 <div className="col-4" >
                     <img src={vehicle.img} className="img-fluid my-4 mx-3" />
                 </div>
                 <div className="col-8 align-self-center">
                     <h2>{vehicle.name}</h2>
                     <p>
-                        Cargo Capacity: {/* {details.result.properties.cargo_capacity} it works but when trying to render does not have info (maybeiplement handle to fetch before render? ask lukasz) */}
+                        Cargo Capacity: {details.result.properties.cargo_capacity} it works but when trying to render does not have info (maybeiplement handle to fetch before render? ask lukasz)
 
                     </p>
                 </div>
@@ -52,7 +52,7 @@ function DetailsVehicles() {
                         </button>
                     </Link>
                 </div>
-            </div >
+            </div >) : "loading ..."}
             <Footer />
         </>
     );

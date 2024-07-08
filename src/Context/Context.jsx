@@ -21,14 +21,10 @@ const FunctionProvider = ({ children }) => {
     const [vehicles, setVehicles] = useState([]);
     //For Favorites
     /* const [favorites,setFavorites]=useState([]); */
-    const [favorites, dispatch] = useReducer(favoritesReducer, JSON.parse(localStorage.getItem("favorites")) || []);
+    const [favorites, dispatch] = useReducer(favoritesReducer,  []);
     //Test
 
-    //Possible States for filter?
-    useEffect(() => {
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-    }, [favorites]);
-    //Maybe change useEffect fom App.jsx to here
+   
 
     const fetchData = async () => {
         try {
@@ -61,7 +57,7 @@ const FunctionProvider = ({ children }) => {
                     return { ...planet, detailedInfo };
                 } catch (error) {
                     console.error(`Error fetching details for planet ${planet.uid}:`, error);
-                    return planet; // Return the planet object without detailed info in case of an error
+                    // return planet; // Return the planet object without detailed info in case of an error
                 }
             };
 
@@ -107,6 +103,10 @@ const FunctionProvider = ({ children }) => {
         switch (action.type) {
             case "add": {
                 const newFavorite = action.payload;
+
+                if (favorites.includes(newFavorite)) {
+                    return favorites
+                }
                 return [
                     ...favorites,
                     newFavorite
@@ -134,7 +134,7 @@ const FunctionProvider = ({ children }) => {
             type: "delete",
             payload: person
         });
-        localStorage.setItem("favorites", JSON.stringify(favorites.filter(item => item.name !== person.name)));
+        
     };
 
 

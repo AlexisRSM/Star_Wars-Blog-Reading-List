@@ -33,23 +33,23 @@ function App() {
         <Route path="/" element={
           <>
             <div className="row mx-1 mt-3"><h2>People</h2></div>
-            <div className="row">
+            {data ? <div className="row">
               {data.map((el) => (
                 <Cards key={el.id} actor={el} />
               ))}
-            </div>
+            </div> :  "loading..."}
             <div className="row mx-1 mt-3"><h2>Planet Entities</h2></div>
-            <div className="row">
+            {planets ? <div className="row">
               {planets.map((el) => (
                 <CardsPlanets key={el.id} planet={el} />
               ))}
-            </div>
+            </div> : "loading..."}
             <div className="row mx-1 mt-3"><h2>Vehicles 🚗 🚀</h2></div>
-            <div className="row">
+            {planets ? <div className="row">
               {vehicles.map((el) => (
                 <CardsVehicles key={el.id} vehicle={el} />
               ))}
-            </div>
+            </div> : "loading..."}
           </>
         } />
         <Route path="/details/:id" element={<Details />} />

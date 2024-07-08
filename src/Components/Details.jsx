@@ -39,7 +39,7 @@ function Details() {
               {actor.homeworld}
             </a>
           </p>
-          <p>
+          <div>
             {actor.name} is known for {actor.films.length} films:
             <ul>
               {actor.films.map((film, index) => (
@@ -50,7 +50,7 @@ function Details() {
                 </li>
               ))}
             </ul>
-          </p>
+          </div>
           <p>
             {actor.name} has {actor.vehicles.length} vehicles and{" "}
             {actor.starships.length} starships.
@@ -65,7 +65,7 @@ function Details() {
         <div className="col d-felx text-end mx-3">
           <Link to={'/'}>
             <button>
-              Get Back Home<i class="bi bi-arrow-return-left"></i>
+              Get Back Home<i className="bi bi-arrow-return-left"></i>
             </button>
           </Link>
         </div>
