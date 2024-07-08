@@ -21,7 +21,7 @@ function CardsPlanets({ planet }) {
                             Criation: {planet.detailedInfo.created}<br />
                         </p>
                         <div className="buttons">
-                            <Link to={`/details_planets/${planet.id}`}>
+                            <Link to={`/details_planets/${planet.uid}`}>
                                 <button >
                                     profile
 

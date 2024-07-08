@@ -1,20 +1,16 @@
 import { useEffect, useState, useContext } from 'react'
 import './App.css'
 import { Routes, Route } from "react-router-dom";
-//Context needed ()using function?
 import { FunctionContext } from "./Context/Context"
 import Navbar from './Components/Navbar'
-/* import Cards from './Components/Cards'; */
 import Footer from './Components/Footer'
-/* import Cards from './Components/Cards'; */
-
 import Details from './Components/Details';
-
 import "./style/styles.css"
 import Cards from './Components/Cards';
 import CardsPlanets from './Components/CardsPlanets';
 import CardsVehicles from './Components/CardsVehicles';
 import DetailsPlanets from './Components/DetailsPlanets';
+import DetailsVehicles from './Components/DetailsVehicles';
 
 function App() {
   const { data, setData, fetchData, planets, setPlanets, fetchDataPlanets, vehicles, setVehicles, fetchDataVehicles } = useContext(FunctionContext);
@@ -23,18 +19,16 @@ function App() {
     fetchDataPlanets();
     fetchDataVehicles();
   }, [])
-
   /* console.log(data) */
-  console.log(planets);
-
+  /* console.log(planets); */
+  /* console.log(vehicles); */
   //make favorites array later,maybe favorites,setFavorite and method to check if someone is already inFavorites? compare names?
+
 
   return (
     <>
       <Navbar />
-
       <Routes>
-
         <Route path="/" element={
           <>
             <div className="row mx-1 mt-3"><h2>People</h2></div>
@@ -57,17 +51,11 @@ function App() {
             </div>
           </>
         } />
-
         <Route path="/details/:id" element={<Details />} />
-        <Route path="/details_planets/:uid" element={<DetailsPlanets />} /> {/* Should I add like this */}
-
+        <Route path="/details_planets/:uid" element={<DetailsPlanets />} />
+        <Route path='/details_vehicles/:uid' element={<DetailsVehicles />} />
       </Routes>
-
-
-
-
-      {/* <Footer/> */}
-
+      <Footer />
     </>
   )
 }

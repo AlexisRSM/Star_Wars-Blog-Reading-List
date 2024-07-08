@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -6,29 +7,31 @@ function Navbar() {
       <div className="container-fluid">
         <div className="row w-100 align-items-center">
           <div className="col-auto">
-            <img 
-              className="img-fluid" 
-              src='src/img/chewbacca-nav-bar-icon.png' 
-              alt="Chewbacca Logo" 
-              style={{ width: '100px', height: '75px'}}
-            />
+            <Link to={'/'}>
+              <img
+                className="img-fluid"
+                src='src/img/chewbacca-nav-bar-icon.png'
+                alt="Chewbacca Logo"
+                style={{ width: '100px', height: '75px' }}
+              />
+            </Link>
           </div>
           <div className="col text-center">
-            <h1 className="mb-0" style={{color:"Yellow"}}>The Force</h1>
+            <h1 className="mb-0" style={{ color: "Yellow" }}>The Force</h1>
           </div>
           <div className="col-auto d-flex align-items-center">
             <form className="d-flex me-3" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
               {/* <button className="btn btn-outline-success" type="submit">Search</button> */}
             </form>
             <ul className="navbar-nav">
               <li className="nav-item dropdown">
-                <button 
-                  className="btn btn-outline-success " 
-                  href="#" 
-                  id="favoritesDropdown" 
-                  role="button" 
-                  data-bs-toggle="dropdown" 
+                <button
+                  className="btn btn-outline-success "
+                  href="#"
+                  id="favoritesDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
                   aria-expanded="false">
                   <i className="bi bi-bookmark-heart fs-3"></i>
                 </button>
